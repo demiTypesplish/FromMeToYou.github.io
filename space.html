@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Space</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+body.space-page{
+    margin:0;
+    min-height:100vh;
+    background:#000;
+    overflow-x:hidden;
+    overflow-y:auto;
+    color:white;
+    animation:pageEnter 1.4s ease;
+}
+@keyframes pageEnter{
+    from{opacity:0;transform:scale(1.03);}
+    to{opacity:1;transform:scale(1);}
+}
+.space-background{
+    position:fixed;
+    inset:0;
+    background:#000;
+}
+.space-background::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(white 1px, transparent 1px),
+      radial-gradient(white 1px, transparent 1px);
+    background-size:120px 120px, 180px 180px;
+    animation:twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:.4;}
+    to{opacity:1;}
+}
+.shooting-star{
+    position:fixed;
+    width:150px;
+    height:2px;
+    background:white;
+    transform:rotate(20deg);
+    animation:shoot 8s linear infinite;
+}
+
+.s1{top:15%;left:-20%;}
+.s2{top:40%;left:-35%;animation-delay:3s;}
+@keyframes shoot{
+    from{
+        transform:translateX(0) translateY(0) rotate(20deg);
+        opacity:0;
+    }
+    10%{
+        opacity:1;
+    }
+    to{
+        transform:translateX(1600px) translateY(500px) rotate(20deg);
+        opacity:0;
+    }
+}
+.space-container{
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+.headline{max-width:500px;}
+.message1,.message2,.message3{
+    max-width:420px;
+    line-height:1.8;
+    margin:30px 0;
+}
+.message2{margin-left:auto;}
+.message3{max-width:500px;}
+.space-image{
+    position:absolute;
+    animation:float 5s ease-in-out infinite;
+}
+.space-image-left{left:0;top:160px;width:220px;}
+.space-image-mid{right:100px;top:250px;width:240px;}
+.space-image-right{right:0;bottom:50px;width:220px;}
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-18px);}
+}
+.backlink{color:white;text-decoration:none;}
+
+
+.message4,
+.message5{
+    position:relative;
+    z-index:3;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    animation:textReveal 1.2s ease;
+    max-width:500px;
+    line-height:1.9;
+    margin:50px auto;
+}
+</style>
+</head>
+<body class="space-page">
+    
+<div class="space-background"></div>
+<div class="shooting-star s1"></div>
+<div class="shooting-star s2"></div>
+
+<main class="space-container">
+<img src="images/space1.png" class="space-image space-image-left" alt="">
+<img src="images/space2.png" class="space-image space-image-mid" alt="">
+<img src="images/space3.png" class="space-image space-image-right" alt="">
+
+<div class="stardust-tag">supernova • stars • universe</div>
+
+<p class="headline">Supernova: bursting into brilliance, too beautiful for the darkness to contain</p>
+
+<div class="message1">
+Understanding the tragedy of a supernova reminded me that the stars spend a lifetime hoarding light and gathering elements, only to burst it all out in a single, beautiful moment of brilliant explosion.
+</div>
+
+<div class="message2">
+The light from a supernova can outshine an entire galaxy for a brief period, illuminating the cosmos with its radiant glow.
+</div>
+
+<div class="message3">
+Then, I found myself in this scenario, gathering all the feelings, affections, and every bit of admiration until my core couldn't handle it anymore, and I burst into a supernova of emotions, shining brightly. With the hopes of my light reaching this star I admire.
+</div>
+
+<div class="message4">
+ <span style="color: yellow"><b><u>You are the star.</u></b></span> You shine so luminous that I want to reach you, and for a moment, I'll be able to be a part of your brilliance.
+</div>
+
+<div class="message5">
+    <i>Let the cosmos bow before your celestial radiance, my <span style="color: yellow">luminous starlight</span>, for your light eclipses the heavens, leaving the proudest stars faint from your <span class="pink">beauty</span>.</i>
+</div>
+
+<a class="backlink" href="Home.html">← Back</a>
+</div>
+</main>
+</body>
+</html>
